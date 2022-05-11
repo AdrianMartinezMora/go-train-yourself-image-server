@@ -1,25 +1,21 @@
-import express, { Application} from 'express';
-import morgan from 'morgan';
-import path from 'path';
-import cors from 'cors';
+import express from "express";
+import morgan from "morgan";
+const app = express();
 
 import indexRoutes from './routes/index'
 
-// Initializations
-const app: Application = express();
+//settings
 
-// Settings
-app.set('port', process.env.PORT || 4000);
+app.set('port',process.env.PORT || 4000)
 
-// Middlewares
-app.use(morgan('dev'));
-app.use(cors());
-app.use(express.json());
+// middlewares
+app.use(morgan('dev'))
+app.use(express.json())
 
-// Routes
-app.use('/api', indexRoutes);
+//routes
+app.use('/api', indexRoutes)
 
-// this folders for this application will be used to store public file images
-app.use('/uploads', express.static(path.resolve('uploads')));
+//this folder is the public folder to upload images
+app.use('/uploads',express.static('uploads'));
 
 export default app;
