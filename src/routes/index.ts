@@ -1,11 +1,19 @@
 import { Router } from "express";
 const router = Router()
-import multer from "../libs/multer";
+import prodMulter from "../libs/prodMulter";
+import catMulter from "../libs/catMulter";
+import usrMulter from "../libs/usrMulter";
 
-import { createPhoto } from "../controller/photo.controller";
+import { createProdPhoto, createCatPhoto, createUserPhoto  } from "../controller/photo.controller";
 
-router.route('/photos')
-    .post(multer.single('image'),createPhoto)
+router.route('/prod')
+    .post(prodMulter.single('image'), createProdPhoto)
+
+router.route('/cat')
+    .post(prodMulter.single('image'), createCatPhoto)
+
+router.route('/usr')
+    .post(prodMulter.single('image'), createUserPhoto)
 
 
 export default router;

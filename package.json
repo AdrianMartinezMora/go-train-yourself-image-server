@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AdrianMartinezMora/go-train-yourself-image-server#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "typescript": "^4.6.4"
   },
   "dependencies": {
