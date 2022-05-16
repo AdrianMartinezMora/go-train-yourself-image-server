@@ -10,10 +10,10 @@ router.route('/prod')
     .post(prodMulter.single('image'), createProdPhoto)
 
 router.route('/cat')
-    .post(prodMulter.single('image'), createCatPhoto)
+    .post(catMulter.single('image'), createCatPhoto)
 
 router.route('/usr')
-    .post(prodMulter.single('image'), createUserPhoto)
+    .post(usrMulter.single('image'), createUserPhoto)
 
 
 export default router;
